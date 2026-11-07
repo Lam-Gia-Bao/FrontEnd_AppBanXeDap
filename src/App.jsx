@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx";
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./pages/Shop.jsx";
+import Auth from "./pages/Auth.jsx";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
               <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/shop" element={<Shop />} />
+                  <Route path="/login" element={<Auth />} />
+                  <Route path="/register" element={<Auth />} />
               </Routes>
             <Footer />
           </div>

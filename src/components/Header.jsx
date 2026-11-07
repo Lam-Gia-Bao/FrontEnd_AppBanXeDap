@@ -52,6 +52,12 @@ function Header() {
                         >
                             🛒<span className="bag-count">0</span>
                         </button>
+                        <Link className="avatar-link" to="/login" aria-label="Đăng nhập">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="8" r="3.5" />
+                                <path d="M5 20c.7-3.1 3.2-5 7-5s6.3 1.9 7 5" />
+                            </svg>
+                        </Link>
                         <button
                             className="menu-button"
                             aria-label="Mở menu"
