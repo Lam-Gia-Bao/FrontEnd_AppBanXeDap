@@ -1,12 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [openMenu, setOpenMenu] = useState(false);
 
-    //xai tam alert, console log de test btn
     const handleActionClick = (tenChucNang) => {
-        console.log("Click vao:", tenChucNang);
-        alert("Tính năng " + tenChucNang + " đang được cập nhật!");
+        alert("Tính năng " + tenChucNang + " đang được cập nhật");
     };
 
     return (
@@ -25,9 +24,9 @@ function Header() {
 
             <header>
                 <div className="container nav">
-                    <a className="logo" href="#home">
-                        <span className="logo-mark">↗</span>BikeTrend
-                    </a>
+                    <Link className="logo" to="/">
+                        <span className="logo-mark">⚙</span>BikeTrend
+                    </Link>
 
                     <nav id="main-nav" className={openMenu ? "open" : ""}>
                         <a className="active" href="#home" onClick={() => setOpenMenu(false)}>Trang chủ</a>
@@ -50,7 +49,7 @@ function Header() {
                             aria-label="Giỏ hàng"
                             onClick={() => handleActionClick("giỏ hàng")}
                         >
-                            ♧<span className="bag-count">0</span>
+                            🛒<span className="bag-count">0</span>
                         </button>
                         <button
                             className="menu-button"
