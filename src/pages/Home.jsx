@@ -6,7 +6,6 @@ import banner3 from "../assets/banners/banner-3.png";
 import banner4 from "../assets/banners/banner-4.png";
 import banner5 from "../assets/banners/banner-5.png";
 import banner6 from "../assets/banners/banner-6.png";
-import banner7 from "../assets/banners/banner-7.png";
 
 const bannerImages = [
     banner1,
@@ -15,7 +14,6 @@ const bannerImages = [
     banner4,
     banner5,
     banner6,
-    banner7,
 ];
 
 function Home() {
