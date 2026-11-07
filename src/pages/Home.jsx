@@ -1,6 +1,44 @@
+import { useEffect, useState } from "react";
 import { categoriesData, productsData } from "../data/bikesData";
+import banner1 from "../assets/banners/banner-1.png";
+import banner2 from "../assets/banners/banner-2.png";
+import banner3 from "../assets/banners/banner-3.png";
+import banner4 from "../assets/banners/banner-4.png";
+import banner5 from "../assets/banners/banner-5.png";
+import banner6 from "../assets/banners/banner-6.png";
+import banner7 from "../assets/banners/banner-7.png";
+
+const bannerImages = [
+    banner1,
+    banner2,
+    banner3,
+    banner4,
+    banner5,
+    banner6,
+    banner7,
+];
 
 function Home() {
+    const [activeBanner, setActiveBanner] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setActiveBanner((currentBanner) => (currentBanner + 1) % bannerImages.length);
+        }, 5000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const showPreviousBanner = () => {
+        setActiveBanner((currentBanner) => (
+            currentBanner === 0 ? bannerImages.length - 1 : currentBanner - 1
+        ));
+    };
+
+    const showNextBanner = () => {
+        setActiveBanner((currentBanner) => (currentBanner + 1) % bannerImages.length);
+    };
+
     const handleToastClick = (e) => {
         e.preventDefault();
         alert("Tính năng đang cập nhật");
@@ -8,6 +46,50 @@ function Home() {
 
     return (
         <main>
+            <section className="banner-slider" aria-label="Banner giới thiệu">
+                <div
+                    className="banner-track"
+                    style={{ transform: `translateX(-${activeBanner * 100}%)` }}
+                >
+                    {bannerImages.map((banner, index) => (
+                        <img
+                            key={banner}
+                            className="banner-slide"
+                            src={banner}
+                            alt={`Banner BikeTrend ${index + 1}`}
+                        />
+                    ))}
+                </div>
+                <button
+                    className="banner-control banner-control-previous"
+                    type="button"
+                    aria-label="Banner trước"
+                    onClick={showPreviousBanner}
+                >
+                    ‹
+                </button>
+                <button
+                    className="banner-control banner-control-next"
+                    type="button"
+                    aria-label="Banner tiếp theo"
+                    onClick={showNextBanner}
+                >
+                    ›
+                </button>
+                <div className="banner-indicators">
+                    {bannerImages.map((banner, index) => (
+                        <button
+                            key={banner}
+                            className={`banner-indicator ${activeBanner === index ? "active" : ""}`}
+                            type="button"
+                            aria-label={`Chuyển đến banner ${index + 1}`}
+                            aria-current={activeBanner === index ? "true" : undefined}
+                            onClick={() => setActiveBanner(index)}
+                        />
+                    ))}
+                </div>
+            </section>
+
             <section className="section" id="categories">
                 <div className="container">
                     <div className="section-head">
