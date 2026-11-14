@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./pages/Shop.jsx";
 import Auth from "./pages/Auth.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                   <Route path="/login" element={<Auth />} />
                   <Route path="/register" element={<Auth />} />
                   <Route path="/product/:id" element={<ProductDetail />} />
+                  <Route path="/checkout" element={<Checkout />} />
               </Routes>
             <Footer />
           </div>
