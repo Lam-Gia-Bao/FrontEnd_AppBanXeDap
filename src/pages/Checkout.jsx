@@ -16,7 +16,7 @@ function Checkout() {
     const submitOrder = (event) => {
         event.preventDefault();
         alert("Đặt hàng thành công!");
-        navigate("/");
+        navigate(`/checkout/success?product=${checkoutProduct.id}&quantity=${quantity}`);
     };
 
     return (
