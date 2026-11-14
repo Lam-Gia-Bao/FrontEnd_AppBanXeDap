@@ -317,3 +317,48 @@
     .checkout-full-field { grid-column: auto; }
   }
 
+.success-page { min-height: calc(100vh - 112px); padding: 34px 20px 70px; color: #33343e; background: #f0f1f3; }
+.success-hero { width: min(100%, 680px); margin: 0 auto; padding: 30px 20px 36px; border: 1px solid #e1e2e5; border-radius: 3px 3px 0 0; background: #e6e7e9; text-align: center; }
+.success-brand { display: inline-flex; align-items: center; gap: 7px; color: #385175; font: 800 24px/1 "Roboto", sans-serif; letter-spacing: -.8px; }
+.success-brand span { display: grid; place-items: center; width: 30px; height: 30px; border: 2px solid #385175; border-radius: 8px; font-size: 19px; }
+.success-check { display: grid; place-items: center; width: 104px; height: 104px; margin: 34px auto 23px; border: 3px solid #83bc43; border-radius: 50%; color: #83bc43; font-size: 67px; font-weight: 300; line-height: 1; }
+.success-hero h1 { margin: 0 0 14px; color: #292a31; font-size: clamp(26px, 4vw, 37px); letter-spacing: -.8px; }
+.success-hero p { color: #5b5c65; font-size: 17px; line-height: 1.55; }
+.success-hero p strong { font-weight: 500; }
+.success-order, .success-customer { width: min(100%, 680px); margin: 0 auto; border: 1px solid #e1e2e5; border-top: 0; background: #fff; }
+.success-order-heading { display: flex; justify-content: space-between; align-items: center; padding: 19px 24px; border-bottom: 1px solid #e5e5e7; }
+.success-order-heading h2 { margin: 0; color: #3b3c44; font-size: 18px; letter-spacing: -.3px; }
+.success-order-heading a { color: #477a99; font-size: 14px; }
+.success-product { display: grid; grid-template-columns: 90px minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 22px 24px; border-bottom: 1px solid #e5e5e7; }
+.success-product-image { position: relative; }
+.success-product-image img { width: 90px; height: 76px; object-fit: cover; background: #f3f5ef; }
+.success-product-image span { position: absolute; top: -8px; right: -8px; display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; color: #fff; background: #3d9bbd; font-size: 12px; }
+.success-product-info { display: grid; gap: 7px; }
+.success-product-info strong { color: #34353d; font-size: 17px; line-height: 1.35; }
+.success-product-info small { color: #85858d; font-size: 14px; }
+.success-product-price { color: #555660; font-size: 16px; }
+.success-costs { padding: 18px 24px 0; }
+.success-costs div { display: flex; justify-content: space-between; padding: 8px 0; color: #555660; font-size: 16px; }
+.success-costs strong { font-weight: 500; }
+.success-costs .success-grand-total { margin: 14px -24px 0; padding: 17px 24px; border-top: 1px solid #e5e5e7; color: #454650; font-size: 20px; }
+.success-costs .success-grand-total strong { color: #3092ba; font-size: 29px; font-weight: 700; }
+.success-customer { margin-top: 18px; padding: 27px 24px; border-top: 1px solid #e1e2e5; }
+.success-customer h2 { margin: 0 0 20px; color: #34353d; font-size: 24px; font-weight: 500; letter-spacing: -.5px; }
+.success-customer p { margin: 7px 0; color: #676871; font-size: 15px; }
+.success-home-button { display: block; width: min(100%, 680px); margin: 20px auto 0; text-align: center; }
+@media (max-width: 520px) {
+  .success-page { padding: 0 0 45px; }
+  .success-hero, .success-order, .success-customer { width: 100%; border-right: 0; border-left: 0; }
+  .success-hero { padding: 27px 20px 32px; }
+  .success-check { width: 91px; height: 91px; margin-top: 28px; font-size: 56px; }
+  .success-hero p { font-size: 16px; }
+  .success-order-heading, .success-product, .success-costs, .success-customer { padding-left: 16px; padding-right: 16px; }
+  .success-product { grid-template-columns: 67px minmax(0, 1fr); gap: 12px; }
+  .success-product-image img { width: 67px; height: 58px; }
+  .success-product-info strong { font-size: 15px; }
+  .success-product-info small { font-size: 12px; }
+  .success-product-price { grid-column: 2; }
+  .success-costs .success-grand-total { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
+  .success-home-button { width: calc(100% - 32px); }
+}
+
