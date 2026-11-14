@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { productsData, categoriesData } from "../data/bikesData";
+import { Link } from "react-router-dom";
 
 function Shop() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -57,7 +58,7 @@ function Shop() {
             ) : (
                 <div className="product-grid">
                     {filteredProducts.map(product => (
-                        <article key={product.id} className="product-card">
+                        <Link to={`/product/${product.id}`} key={product.id} className="product-card">
                             <div className="product-photo">
                                 {product.badge && <span className="badge">{product.badge}</span>}
                                 <button className="heart" aria-label="Yêu thích">♡</button>
@@ -68,7 +69,7 @@ function Shop() {
                                 <p>{product.desc}</p>
                                 <strong className="price">{product.priceFormatted}</strong>
                             </div>
-                        </article>
+                        </Link>
                     ))}
                 </div>
             )}

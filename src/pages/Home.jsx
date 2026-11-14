@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { categoriesData, productsData } from "../data/bikesData";
+import { Link } from "react-router-dom";
 import banner1 from "../assets/banners/banner-1.png";
 import banner2 from "../assets/banners/banner-2.png";
 import banner3 from "../assets/banners/banner-3.png";
@@ -122,7 +123,7 @@ function Home() {
                     </div>
                     <div className="product-grid">
                         {productsData.map(product => (
-                            <article key={product.id} className="product-card">
+                            <Link to={`/product/${product.id}`} key={product.id} className="product-card">
                                 <div className="product-photo">
                                     {product.badge && <span className="badge">{product.badge}</span>}
                                     <button className="heart" aria-label="Thêm vào yêu thích" onClick={handleToastClick}>♡</button>
@@ -133,7 +134,7 @@ function Home() {
                                     <p>{product.desc}</p>
                                     <strong className="price">{product.priceFormatted}</strong>
                                 </div>
-                            </article>
+                            </Link>
                         ))}
                     </div>
                 </div>
