@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { productsData } from "../data/bikesData";
 
 const productGallery = [
@@ -10,6 +10,7 @@ const productGallery = [
 
 function ProductDetail() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const product = productsData.find((item) => item.id === Number(id)) || productsData[0];
     const [activeImage, setActiveImage] = useState(0);
     const [quantity, setQuantity] = useState(1);
@@ -20,7 +21,7 @@ function ProductDetail() {
     };
 
     const buyNow = () => {
-        alert(`Đang chuyển đến thanh toán với ${quantity} sản phẩm`);
+        navigate(`/checkout?product=${product.id}&quantity=${quantity}`);
     };
 
     return (
