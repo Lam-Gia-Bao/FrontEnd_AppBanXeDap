@@ -470,3 +470,8 @@
   opacity: 0.45;
   cursor: not-allowed;
 }
+
+.heart.active {
+  color: #d9383a;
+  background: var(--white);
+}
