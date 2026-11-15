@@ -8,6 +8,7 @@ import Auth from "./pages/Auth.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
+import Wishlist from "./pages/Wishlist.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                   <Route path="/product/:id" element={<ProductDetail />} />
                   <Route path="/checkout" element={<Checkout />} />
                   <Route path="/checkout/success" element={<OrderSuccess />} />
+                  <Route path="/wishlist" element={<Wishlist />} />
               </Routes>
             <Footer />
           </div>

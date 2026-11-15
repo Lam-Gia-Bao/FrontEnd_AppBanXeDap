@@ -31,6 +31,7 @@ function Header() {
                     <nav id="main-nav" className={openMenu ? "open" : ""}>
                         <Link to="/" onClick={() => setOpenMenu(false)}>Trang chủ</Link>
                         <Link to="/shop" onClick={() => setOpenMenu(false)}>Cửa hàng</Link>
+                        <Link to="/wishlist" onClick={() => setOpenMenu(false)}>Yêu thích</Link>
                         <a href="#categories" onClick={() => setOpenMenu(false)}>Danh mục</a>
                         <a href="#products" onClick={() => setOpenMenu(false)}>Sản phẩm</a>
                         <a href="#story" onClick={() => setOpenMenu(false)}>Về BikeTrend</a>
