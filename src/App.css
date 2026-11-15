@@ -362,3 +362,132 @@
   .success-home-button { width: calc(100% - 32px); }
 }
 
+.shop-page {
+  padding: 60px 0 90px;
+}
+
+.shop-toolbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop-search {
+  width: min(100%, 320px);
+  padding: 11px 16px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--white);
+  font: 14px "Roboto", sans-serif;
+  outline: none;
+}
+
+.shop-search:focus {
+  border-color: var(--green);
+}
+
+.shop-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.shop-sort select {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--ink);
+  font: 500 13px "Roboto", sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.shop-categories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.shop-category-btn {
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  font: 600 13px "Roboto", sans-serif;
+  transition: background .2s, color .2s;
+}
+
+.shop-category-btn.active, .shop-category-btn:hover {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+
+.shop-empty {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.shop-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 42px;
+}
+
+.shop-pagination button {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font: 600 13px "Roboto", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.shop-pagination button.active,
+.shop-pagination button:hover:not(:disabled) {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+
+.shop-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.heart.active {
+  color: #d9383a;
+  background: var(--white);
+}
+
+.wishlist-clear-btn {
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font: 600 13px "Roboto", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.wishlist-clear-btn:hover {
+  background: #d9383a;
+  color: var(--white);
+  border-color: #d9383a;
+}
