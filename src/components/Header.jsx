@@ -1,8 +1,18 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
     const [openMenu, setOpenMenu] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    const handleHomeClick = () => {
+        setOpenMenu(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
     const handleActionClick = (tenChucNang) => {
         alert("Tính năng " + tenChucNang + " đang được cập nhật");
@@ -24,12 +34,12 @@ function Header() {
 
             <header>
                 <div className="container nav">
-                    <Link className="logo" to="/">
+                    <Link className="logo" to="/" onClick={handleHomeClick}>
                         <span className="logo-mark">⚙</span>BikeTrend
                     </Link>
 
                     <nav id="main-nav" className={openMenu ? "open" : ""}>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>Trang chủ</Link>
+                        <Link to="/" onClick={handleHomeClick}>Trang chủ</Link>
                         <Link to="/shop" onClick={() => setOpenMenu(false)}>Cửa hàng</Link>
                         <Link to="/wishlist" onClick={() => setOpenMenu(false)}>Yêu thích</Link>
                         <a href="#categories" onClick={() => setOpenMenu(false)}>Danh mục</a>

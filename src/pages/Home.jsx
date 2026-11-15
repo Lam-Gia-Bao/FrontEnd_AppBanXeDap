@@ -22,6 +22,11 @@ function Home() {
     const homeCategories = categoriesData.filter(cat => cat.name !== "Tất cả").slice(0, 4);
     const featuredProducts = productsData.slice(0, 6);
 
+    const [wishlistIds, setWishlistIds] = useState(() => {
+        const saved = localStorage.getItem("wishlistBikes");
+        return saved ? JSON.parse(saved) : [];
+    });
+
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveBanner((currentBanner) => (currentBanner + 1) % bannerImages.length);
@@ -40,9 +45,16 @@ function Home() {
         setActiveBanner((currentBanner) => (currentBanner + 1) % bannerImages.length);
     };
 
-    const handleToastClick = (e) => {
+    const handleHeartClick = (e, productId) => {
         e.preventDefault();
-        alert("Tính năng đang cập nhật");
+        let updatedList;
+        if (wishlistIds.includes(productId)) {
+            updatedList = wishlistIds.filter(id => id !== productId);
+        } else {
+            updatedList = [...wishlistIds, productId];
+        }
+        setWishlistIds(updatedList);
+        localStorage.setItem("wishlistBikes", JSON.stringify(updatedList));
     };
 
     return (
@@ -128,7 +140,14 @@ function Home() {
                             <Link to={`/product/${product.id}`} key={product.id} className="product-card">
                                 <div className="product-photo">
                                     {product.badge && <span className="badge">{product.badge}</span>}
-                                    <button className="heart" aria-label="Thêm vào yêu thích" onClick={handleToastClick}>♡</button>
+                                    <button
+                                        type="button"
+                                        className={`heart ${wishlistIds.includes(product.id) ? "active" : ""}`}
+                                        aria-label="Thêm vào yêu thích"
+                                        onClick={(e) => handleHeartClick(e, product.id)}
+                                    >
+                                        {wishlistIds.includes(product.id) ? "♥" : "♡"}
+                                    </button>
                                     <img src={product.image} alt={product.name} />
                                 </div>
                                 <div className="product-info">

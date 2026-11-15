@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { productsData, categoriesData } from "../data/bikesData";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function Shop() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -13,7 +13,7 @@ function Shop() {
     const [priceFilter, setPriceFilter] = useState("all");
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 15;
 
     const [wishlistIds, setWishlistIds] = useState(() => {
         const saved = localStorage.getItem("wishlistBikes");
@@ -49,14 +49,6 @@ function Shop() {
     };
 
     const filteredProducts = useMemo(() => {
-        useEffect(() => {
-            setCurrentPage(1);
-        }, [searchTerm, selectedCategory, priceFilter, sortBy]);
-
-        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-        const startIndex = (currentPage - 1) * itemsPerPage;
-        const currentProducts = filteredProducts.slice(startIndex, startIndex + itemsPerPage);
-
         const list = productsData.filter(product => {
             const matchName = product.name.toLowerCase().includes(searchTerm.toLowerCase());
             const matchCategory = selectedCategory === "Tất cả" || product.category === selectedCategory;
@@ -75,6 +67,14 @@ function Shop() {
         }
         return list;
     }, [searchTerm, selectedCategory, sortBy, priceFilter]);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [searchTerm, selectedCategory, priceFilter, sortBy]);
+
+    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentProducts = filteredProducts.slice(startIndex, startIndex + itemsPerPage);
 
     return (
         <main className="container shop-page">
