@@ -10,6 +10,8 @@ function Shop() {
     const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [sortBy, setSortBy] = useState("default");
 
+    const [priceFilter, setPriceFilter] = useState("all");
+
     useEffect(() => {
         const categoryFromUrl = searchParams.get("category");
         if (categoryFromUrl) {
@@ -35,7 +37,11 @@ function Shop() {
         const list = productsData.filter(product => {
             const matchName = product.name.toLowerCase().includes(searchTerm.toLowerCase());
             const matchCategory = selectedCategory === "Tất cả" || product.category === selectedCategory;
-            return matchName && matchCategory;
+            let matchPrice = true;
+            if (priceFilter === "under-10") matchPrice = product.price < 10000000;
+            if (priceFilter === "10-15") matchPrice = product.price >= 10000000 && product.price <= 15000000;
+            if (priceFilter === "over-15") matchPrice = product.price > 15000000;
+            return matchName && matchCategory && matchPrice;
         });
 
         if (sortBy === "price-asc") {
@@ -45,7 +51,7 @@ function Shop() {
             return [...list].sort((a, b) => b.price - a.price);
         }
         return list;
-    }, [searchTerm, selectedCategory, sortBy]);
+    }, [searchTerm, selectedCategory, sortBy, priceFilter]);
 
     return (
         <main className="container shop-page">
@@ -67,6 +73,13 @@ function Shop() {
                 />
 
                 <div className="shop-sort">
+                    <span>Mức giá:</span>
+                    <select value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
+                        <option value="all">Tất cả mức giá</option>
+                        <option value="under-10">Dưới 10 triệu</option>
+                        <option value="10-15">Từ 10 - 15 triệu</option>
+                        <option value="over-15">Trên 15 triệu</option>
+                    </select>
                     <span>Sắp xếp theo:</span>
                     <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
                         <option value="default">Mặc định</option>
