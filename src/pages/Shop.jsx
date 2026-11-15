@@ -12,6 +12,9 @@ function Shop() {
 
     const [priceFilter, setPriceFilter] = useState("all");
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
+
     useEffect(() => {
         const categoryFromUrl = searchParams.get("category");
         if (categoryFromUrl) {
@@ -34,6 +37,14 @@ function Shop() {
     };
 
     const filteredProducts = useMemo(() => {
+        useEffect(() => {
+            setCurrentPage(1);
+        }, [searchTerm, selectedCategory, priceFilter, sortBy]);
+
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const currentProducts = filteredProducts.slice(startIndex, startIndex + itemsPerPage);
+
         const list = productsData.filter(product => {
             const matchName = product.name.toLowerCase().includes(searchTerm.toLowerCase());
             const matchCategory = selectedCategory === "Tất cả" || product.category === selectedCategory;
@@ -108,29 +119,60 @@ function Shop() {
                     <p>Không tìm thấy sản phẩm phù hợp với từ khóa "{searchTerm}"</p>
                 </div>
             ) : (
-                <div className="product-grid">
-                    {filteredProducts.map(product => (
-                        <Link to={`/product/${product.id}`} key={product.id} className="product-card">
-                            <div className="product-photo">
-                                {product.badge && <span className="badge">{product.badge}</span>}
+                <>
+                    <div className="product-grid">
+                        {currentProducts.map(product => (
+                            <Link to={`/product/${product.id}`} key={product.id} className="product-card">
+                                <div className="product-photo">
+                                    {product.badge && <span className="badge">{product.badge}</span>}
+                                    <button
+                                        type="button"
+                                        className="heart"
+                                        aria-label="Yêu thích"
+                                        onClick={(e) => handleHeartClick(e, product.name)}
+                                    >
+                                        ♡
+                                    </button>
+                                    <img src={product.image} alt={product.name} />
+                                </div>
+                                <div className="product-info">
+                                    <h3>{product.name}</h3>
+                                    <p>{product.desc}</p>
+                                    <strong className="price">{product.priceFormatted}</strong>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {totalPages > 1 && (
+                        <div className="shop-pagination">
+                            <button
+                                type="button"
+                                disabled={currentPage === 1}
+                                onClick={() => setCurrentPage(currentPage - 1)}
+                            >
+                                ← Trước
+                            </button>
+                            {Array.from({ length: totalPages }, (_, index) => (
                                 <button
+                                    key={index + 1}
                                     type="button"
-                                    className="heart"
-                                    aria-label="Yêu thích"
-                                    onClick={(e) => handleHeartClick(e, product.name)}
+                                    className={currentPage === index + 1 ? "active" : ""}
+                                    onClick={() => setCurrentPage(index + 1)}
                                 >
-                                    ♡
+                                    {index + 1}
                                 </button>
-                                <img src={product.image} alt={product.name} />
-                            </div>
-                            <div className="product-info">
-                                <h3>{product.name}</h3>
-                                <p>{product.desc}</p>
-                                <strong className="price">{product.priceFormatted}</strong>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                            ))}
+                            <button
+                                type="button"
+                                disabled={currentPage === totalPages}
+                                onClick={() => setCurrentPage(currentPage + 1)}
+                            >
+                                Sau →
+                            </button>
+                        </div>
+                    )}
+                </>
             )}
         </main>
     );
