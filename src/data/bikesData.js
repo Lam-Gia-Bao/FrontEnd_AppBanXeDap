@@ -33,3 +33,90 @@ export const productsData = [
     { id: 23, name: "Túi treo khung chống nước", category: "Phụ kiện", desc: "Ngăn đựng điện thoại cảm ứng · 2.5L", price: 380000, priceFormatted: "380.000đ", badge: "HOT", image: "https://images.unsplash.com/photo-1593764592116-bfb2a97c642a?auto=format&fit=crop&w=800&q=85" },
     { id: 24, name: "Găng tay đạp xe đệm Gel", category: "Phụ kiện", desc: "Chống trượt · Thoáng khí lòng bàn tay", price: 250000, priceFormatted: "250.000đ", badge: "", image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=85" }
 ];
+
+export const journalData = [
+    {
+        id: 1,
+        title: "5 cung đường tuyệt đẹp cho chuyến đạp xe cuối tuần",
+        category: "Lifestyle",
+        date: "12.06.2025",
+        readTime: "4 phút đọc",
+        image: "https://images.unsplash.com/photo-1502744688674-c619d1586c9e?auto=format&fit=crop&w=900&q=80",
+        excerpt: "Gợi ý những cung đường thoáng đãng, nhiều cây xanh để bạn nạp lại năng lượng và tận hưởng thiên nhiên dịp cuối tuần.",
+        content: [
+            "Đạp xe cuối tuần không chỉ giúp rèn luyện thể lực mà còn là cách giải tỏa căng thẳng hiệu quả sau một tuần làm việc. Việc chọn đúng cung đường ít khói bụi và có cảnh quan đẹp sẽ giúp chuyến đi trọn vẹn hơn.",
+            "Cung đường ven hồ hoặc các tuyến đường ngoại ô vào sáng sớm từ 5h30 đến 7h30 luôn là lựa chọn lý tưởng. Mặt đường bằng phẳng phù hợp cho cả dòng xe thành phố (City Bike) lẫn xe thể thao đường trường.",
+            "Đừng quên kiểm tra áp suất lốp, mang theo bình nước cá nhân và đội mũ bảo hiểm đạt chuẩn trước khi xuất phát để đảm bảo an toàn trên suốt hành trình."
+        ]
+    },
+    {
+        id: 2,
+        title: "Chăm xe đúng cách cho hành trình dài bền bỉ",
+        category: "Tips",
+        date: "08.06.2025",
+        readTime: "5 phút đọc",
+        image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=700&q=80",
+        excerpt: "Hướng dẫn vệ sinh sên xích, kiểm tra má phanh và bảo dưỡng định kỳ giúp chiếc xe của bạn luôn vận hành êm ái.",
+        content: [
+            "Bộ truyền động (sên, líp, dĩa) là bộ phận tiếp xúc trực tiếp với bụi bẩn và bùn đất nhiều nhất. Sau mỗi 150km đến 200km di chuyển, bạn nên tẩy rửa sên bằng dung dịch chuyên dụng và tra dầu bôi trơn mới.",
+            "Hệ thống phanh đĩa cơ hoặc phanh thủy lực cần được kiểm tra độ mòn của má phanh mỗi tháng một lần. Nếu nghe thấy tiếng kêu ken két khi bóp phanh, rất có thể đĩa phanh đã dính dầu hoặc má phanh đã mòn tới giới hạn.",
+            "Ngoài ra, hãy giữ lốp xe ở mức áp suất khuyến nghị ghi trên thành lốp (thường từ 45 đến 65 PSI đối với xe địa hình và 80 đến 100 PSI đối với xe đua) để tránh tình trạng dập ruột và giúp xe lướt nhẹ hơn."
+        ]
+    },
+    {
+        id: 3,
+        title: "Những món phụ kiện không thể thiếu khi mới bắt đầu",
+        category: "Gear",
+        date: "02.06.2025",
+        readTime: "3 phút đọc",
+        image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=700&q=80",
+        excerpt: "Tổng hợp các trang bị cơ bản nhưng quan trọng giúp người mới đạp xe an toàn và thoải mái hơn trên mọi cung đường.",
+        content: [
+            "Món phụ kiện quan trọng đầu tiên chắc chắn là mũ bảo hiểm xe đạp chuyên dụng. Thiết kế nhiều khe thoáng khí và trọng lượng siêu nhẹ dưới 300g sẽ bảo vệ vùng đầu mà không gây mỏi cổ khi đội lâu.",
+            "Tiếp theo là bộ đèn pha phía trước và đèn nháy cảnh báo phía sau nếu bạn thường xuyên đạp xe vào sáng sớm hoặc chiều tối. Ánh sáng rõ ràng giúp các phương tiện khác nhận diện bạn từ khoảng cách xa.",
+            "Một chiếc túi treo khung chống nước kèm găng tay đệm Gel và bình nước giữ nhiệt sẽ hoàn thiện bộ trang bị cơ bản, giúp bạn mang theo điện thoại, ví tiền gọn gàng mà không bị vướng víu."
+        ]
+    },
+    {
+        id: 4,
+        title: "Cách chỉnh độ cao yên xe chuẩn xác chống đau mỏi gối",
+        category: "Tips",
+        date: "28.05.2025",
+        readTime: "4 phút đọc",
+        image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+        excerpt: "Yên xe quá thấp hoặc quá cao đều gây áp lực xấu lên khớp gối và lưng dưới. Hãy áp dụng quy tắc gót chân đơn giản sau.",
+        content: [
+            "Rất nhiều người mới đi xe đạp có thói quen hạ yên thật thấp để hai bàn chân chạm đất hoàn toàn khi ngồi trên yên. Tuy nhiên tư thế này khiến đầu gối luôn bị gập quá mức khi đạp, gây mỏi cơ đùi và đau khớp gối nhanh chóng.",
+            "Cách chỉnh chuẩn nhất: Ngồi lên yên, đặt phần gót chân lên bàn đạp ở vị trí thấp nhất (hướng 6 giờ). Khi đó chân của bạn duỗi thẳng hoàn toàn là độ cao yên đã chuẩn.",
+            "Khi chuyển sang tư thế đạp thực tế bằng phần ức bàn chân, đầu gối sẽ có độ chùng nhẹ tự nhiên khoảng 25 độ, giúp phát lực tối ưu và bảo vệ khớp gối lâu dài."
+        ]
+    },
+    {
+        id: 5,
+        title: "Phân biệt xe đạp thành phố, xe địa hình và xe đường trường",
+        category: "Gear",
+        date: "20.05.2025",
+        readTime: "6 phút đọc",
+        image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=80",
+        excerpt: "Mỗi dòng xe được thiết kế hình học khung và cỡ lốp riêng biệt. Cùng tìm hiểu dòng xe nào sinh ra dành cho nhu cầu của bạn.",
+        content: [
+            "Xe đạp thành phố (City / Hybrid Bike) có ghi đông ngang, tư thế ngồi thẳng lưng thoải mái và lốp cỡ vừa 700C, rất thích hợp để đi làm, đi học hằng ngày hoặc dạo phố nhẹ nhàng.",
+            "Xe đạp địa hình (Mountain Bike - MTB) nổi bật với phuộc nhún giảm xóc trước, lốp bản rộng nhiều gai bám đường và khung sườn chắc chắn, giúp bạn tự tin vượt qua đường gồ ghề, sỏi đá.",
+            "Xe đạp đua đường trường (Road Bike) sử dụng ghi đông cong, lốp mỏng trơn áp suất cao và trọng lượng tối giản để đạt tốc độ tối đa trên những tuyến đường nhựa bằng phẳng."
+        ]
+    },
+    {
+        id: 6,
+        title: "Lợi ích của thói quen đạp xe 30 phút mỗi ngày đối với sức khỏe",
+        category: "Lifestyle",
+        date: "14.05.2025",
+        readTime: "4 phút đọc",
+        image: "https://images.unsplash.com/photo-1529422643029-d4585747aaf2?auto=format&fit=crop&w=800&q=80",
+        excerpt: "Chỉ với nửa tiếng đạp xe đều đặn mỗi ngày, hệ tim mạch, giấc ngủ và độ dẻo dai của cơ thể đều được cải thiện rõ rệt.",
+        content: [
+            "Đạp xe là bộ môn vận động nhịp nhàng ít gây chấn động lên cổ chân và khớp gối hơn so với chạy bộ trên nền cứng, phù hợp với mọi lứa tuổi.",
+            "Duy trì 30 phút đạp xe ở cường độ vừa phải giúp đốt cháy từ 250 đến 400 calo, tăng cường tuần hoàn máu và cải thiện dung tích phổi hiệu quả.",
+            "Bên cạnh lợi ích thể chất, việc hít thở không khí ngoài trời và ngắm nhìn nhịp sống xung quanh trên chiếc xe đạp còn giúp tinh thần thư thái, ngủ sâu giấc hơn vào ban đêm."
+        ]
+    }
+];

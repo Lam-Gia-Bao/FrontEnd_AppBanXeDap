@@ -26,7 +26,7 @@ function Header() {
                         Miễn phí giao hàng cho đơn từ <span>2.000.000đ</span>
                     </div>
                     <div className="top-links">
-                        <a href="#journal">Cẩm nang đạp xe</a>
+                        <Link to="/journal">Cẩm nang đạp xe</Link>
                         <a href="#footer">Hệ thống cửa hàng</a>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ function Header() {
                         <a href="#categories" onClick={() => setOpenMenu(false)}>Danh mục</a>
                         <a href="#products" onClick={() => setOpenMenu(false)}>Sản phẩm</a>
                         <a href="#story" onClick={() => setOpenMenu(false)}>Về BikeTrend</a>
-                        <a href="#journal" onClick={() => setOpenMenu(false)}>Tin tức</a>
+                        <Link to="/journal" onClick={() => setOpenMenu(false)}>Tin tức</Link>
                     </nav>
 
                     <div className="actions">

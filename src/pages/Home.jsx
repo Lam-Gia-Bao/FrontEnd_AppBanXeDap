@@ -187,7 +187,7 @@ function Home() {
                             <div className="eyebrow">BikeTrend Journal</div>
                             <h2>Cảm hứng mỗi ngày</h2>
                         </div>
-                        <a className="text-link" href="#journal">Xem tất cả bài viết</a>
+                        Đổi thành: <Link className="text-link" to="/journal">Xem tất cả bài viết</Link>
                     </div>
                     <div className="journal-grid">
                         <article className="journal-card">
@@ -203,7 +203,7 @@ function Home() {
                             <div>
                                 <small>Tips · 08.06.2025</small>
                                 <h3>Chăm xe đúng cách cho hành trình dài</h3>
-                                <a className="text-link" href="#journal">Đọc thêm</a>
+                                <Link className="text-link" to="/journal/2">Đọc thêm</Link>
                             </div>
                         </article>
                         <article className="journal-card">
@@ -211,7 +211,7 @@ function Home() {
                             <div>
                                 <small>Gear · 02.06.2025</small>
                                 <h3>Những món phụ kiện không thể thiếu</h3>
-                                <a className="text-link" href="#journal">Đọc thêm</a>
+                                <Link className="text-link" to="/journal/3">Đọc thêm</Link>
                             </div>
                         </article>
                     </div>

@@ -9,6 +9,8 @@ import ProductDetail from "./pages/ProductDetail.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
+import Journal from "./pages/Journal.jsx";
+import JournalDetail from "./pages/JournalDetail.jsx";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
                   <Route path="/checkout" element={<Checkout />} />
                   <Route path="/checkout/success" element={<OrderSuccess />} />
                   <Route path="/wishlist" element={<Wishlist />} />
+                  <Route path="/journal" element={<Journal />} />
+                  <Route path="/journal/:id" element={<JournalDetail />} />
               </Routes>
             <Footer />
           </div>
