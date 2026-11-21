@@ -5,7 +5,7 @@ function Footer() {
                 <div className="footer-main">
                     <div>
                         <a className="logo" href="#home">
-                            <span className="logo-mark">↗</span>BikeTrend
+                            <span className="logo-mark">⚙</span>BikeTrend
                         </a>
                         <p>Đạp theo cách của bạn. Cùng BikeTrend tạo nên những hành trình đáng nhớ.</p>
                     </div>
@@ -40,8 +40,8 @@ function Footer() {
                 </div>
 
                 <div className="copyright">
-                    <span>© 2025 BikeTrend. All rights reserved.</span>
-                    <span>Made for every journey.</span>
+                    <span>© 2026 BikeTrend. Giữ mọi quyền.</span>
+                    <span>Đồng hành trên mọi hành trình.</span>
                 </div>
             </div>
         </footer>

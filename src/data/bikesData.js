@@ -11,7 +11,7 @@ export const productsData = [
     { id: 1, name: "BikeTrend Urban One", category: "Xe thành phố", desc: "Xe thành phố · Khung nhôm", price: 8490000, priceFormatted: "8.490.000đ", badge: "MỚI", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=85" },
     { id: 2, name: "BikeTrend Explorer", category: "Xe địa hình", desc: "Xe địa hình · 18 tốc độ", price: 12990000, priceFormatted: "12.990.000đ", badge: "BÁN CHẠY", image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=85" },
     { id: 3, name: "BikeTrend E-City", category: "Xe đạp điện", desc: "Xe đạp điện · Trợ lực thông minh", price: 18990000, priceFormatted: "18.990.000đ", badge: "", image: "https://images.unsplash.com/photo-1624243519828-52a0f2c88af3?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
-    { id: 4, name: "BikeTrend Road Sport", category: "Xe thể thao", desc: "Xe đua đường trường · Ghi đông cong", price: 15490000, priceFormatted: "15.490.000đ", badge: "HOT", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=85" },
+    { id: 4, name: "BikeTrend Road Sport", category: "Xe thể thao", desc: "Xe đua đường trường · Ghi đông cong", price: 15490000, priceFormatted: "15.490.000đ", badge: "NỔI BẬT", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=85" },
     { id: 5, name: "BikeTrend Mountain Pro", category: "Xe địa hình", desc: "Phuộc dầu khí nén · Phanh đĩa thủy lực", price: 14200000, priceFormatted: "14.200.000đ", badge: "", image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=85" },
     { id: 6, name: "BikeTrend City Flex", category: "Xe thành phố", desc: "Dáng thanh lịch · Giỏ trước tiện lợi", price: 7990000, priceFormatted: "7.990.000đ", badge: "", image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=85" },
     { id: 7, name: "BikeTrend Aero Carbon", category: "Xe thể thao", desc: "Khung sợi carbon · Siêu nhẹ 8.2kg", price: 24500000, priceFormatted: "24.500.000đ", badge: "CAO CẤP", image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=85" },
@@ -19,10 +19,10 @@ export const productsData = [
     { id: 9, name: "BikeTrend Retro Breeze", category: "Xe thành phố", desc: "Phong cách cổ điển · Yên da êm ái", price: 6890000, priceFormatted: "6.890.000đ", badge: "", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=85" },
     { id: 10, name: "BikeTrend Speedster 500", category: "Xe thể thao", desc: "Bộ đề Shimano 21 cấp · Vành hợp kim", price: 11200000, priceFormatted: "11.200.000đ", badge: "", image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=85" },
     { id: 11, name: "Mũ bảo hiểm BikeTrend Safe", category: "Phụ kiện", desc: "Siêu nhẹ · Thoáng khí 18 lỗ gió", price: 650000, priceFormatted: "650.000đ", badge: "BÁN CHẠY", image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=85" },
-    { id: 12, name: "Bình nước thể thao Pro", category: "Phụ kiện", desc: "Nhựa BPA Free · Giữ nhiệt 650ml", price: 290000, priceFormatted: "290.000đ", badge: "", image: "https://images.unsplash.com/photo-1593764592116-bfb2a97c642a?auto=format&fit=crop&w=800&q=85" },
+    { id: 12, name: "Bình nước thể thao Pro", category: "Phụ kiện", desc: "Nhựa không BPA · Giữ nhiệt 650ml", price: 290000, priceFormatted: "290.000đ", badge: "", image: "https://images.unsplash.com/photo-1593764592116-bfb2a97c642a?auto=format&fit=crop&w=800&q=85" },
     { id: 13, name: "BikeTrend Gravel King", category: "Xe địa hình", desc: "Lốp gai đa địa hình · Khung thép Cr-Mo", price: 16800000, priceFormatted: "16.800.000đ", badge: "MỚI", image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=800&q=85" },
     { id: 14, name: "BikeTrend Touring X1", category: "Xe thành phố", desc: "Baga sau chịu tải · Chắn bùn hợp kim", price: 9600000, priceFormatted: "9.600.000đ", badge: "", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=85" },
-    { id: 15, name: "BikeTrend Sprint RS", category: "Xe thể thao", desc: "Khí động học · Tay đề lắc Shimano", price: 19200000, priceFormatted: "19.200.000đ", badge: "HOT", image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=85" },
+    { id: 15, name: "BikeTrend Sprint RS", category: "Xe thể thao", desc: "Khí động học · Tay đề lắc Shimano", price: 19200000, priceFormatted: "19.200.000đ", badge: "NỔI BẬT", image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=85" },
     { id: 16, name: "BikeTrend E-Cargo Plus", category: "Xe đạp điện", desc: "Động cơ 500W · Quãng đường 70km", price: 21900000, priceFormatted: "21.900.000đ", badge: "BÁN CHẠY", image: "https://images.unsplash.com/photo-1624243519828-52a0f2c88af3?q=80&w=1740&auto=format&fit=crop" },
     { id: 17, name: "Đèn pha LED BikeTrend 800Lm", category: "Phụ kiện", desc: "Chống nước IPX6 · Sạc Type-C", price: 450000, priceFormatted: "450.000đ", badge: "", image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=85" },
     { id: 18, name: "Khóa số hợp kim BikeGuard", category: "Phụ kiện", desc: "Cáp thép bọc nhựa · 5 số bảo mật", price: 320000, priceFormatted: "320.000đ", badge: "", image: "https://images.unsplash.com/photo-1593764592116-bfb2a97c642a?auto=format&fit=crop&w=800&q=85" },
@@ -30,7 +30,7 @@ export const productsData = [
     { id: 20, name: "BikeTrend Metro Lite", category: "Xe thành phố", desc: "Trọng lượng nhẹ · Phù hợp đi làm hằng ngày", price: 7450000, priceFormatted: "7.450.000đ", badge: "MỚI", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=85" },
     { id: 21, name: "BikeTrend Veloce 300", category: "Xe thể thao", desc: "Khung nhôm không mối hàn · Dây âm sườn", price: 12500000, priceFormatted: "12.500.000đ", badge: "", image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=85" },
     { id: 22, name: "BikeTrend E-Commuter", category: "Xe đạp điện", desc: "Cảm biến lực đạp · Màn hình LCD", price: 17800000, priceFormatted: "17.800.000đ", badge: "", image: "https://images.unsplash.com/photo-1505705694340-019e1e4e6f4a?auto=format&fit=crop&w=800&q=85" },
-    { id: 23, name: "Túi treo khung chống nước", category: "Phụ kiện", desc: "Ngăn đựng điện thoại cảm ứng · 2.5L", price: 380000, priceFormatted: "380.000đ", badge: "HOT", image: "https://images.unsplash.com/photo-1593764592116-bfb2a97c642a?auto=format&fit=crop&w=800&q=85" },
+    { id: 23, name: "Túi treo khung chống nước", category: "Phụ kiện", desc: "Ngăn đựng điện thoại cảm ứng · 2.5L", price: 380000, priceFormatted: "380.000đ", badge: "NỔI BẬT", image: "https://images.unsplash.com/photo-1593764592116-bfb2a97c642a?auto=format&fit=crop&w=800&q=85" },
     { id: 24, name: "Găng tay đạp xe đệm Gel", category: "Phụ kiện", desc: "Chống trượt · Thoáng khí lòng bàn tay", price: 250000, priceFormatted: "250.000đ", badge: "", image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=85" }
 ];
 
@@ -38,7 +38,7 @@ export const journalData = [
     {
         id: 1,
         title: "5 cung đường tuyệt đẹp cho chuyến đạp xe cuối tuần",
-        category: "Lifestyle",
+        category: "Phong cách sống",
         date: "12.06.2025",
         readTime: "4 phút đọc",
         image: "https://images.unsplash.com/photo-1502744688674-c619d1586c9e?auto=format&fit=crop&w=900&q=80",
@@ -52,7 +52,7 @@ export const journalData = [
     {
         id: 2,
         title: "Chăm xe đúng cách cho hành trình dài bền bỉ",
-        category: "Tips",
+        category: "Mẹo hay",
         date: "08.06.2025",
         readTime: "5 phút đọc",
         image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=700&q=80",
@@ -66,7 +66,7 @@ export const journalData = [
     {
         id: 3,
         title: "Những món phụ kiện không thể thiếu khi mới bắt đầu",
-        category: "Gear",
+        category: "Trang bị",
         date: "02.06.2025",
         readTime: "3 phút đọc",
         image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=700&q=80",
@@ -80,7 +80,7 @@ export const journalData = [
     {
         id: 4,
         title: "Cách chỉnh độ cao yên xe chuẩn xác chống đau mỏi gối",
-        category: "Tips",
+        category: "Mẹo hay",
         date: "28.05.2025",
         readTime: "4 phút đọc",
         image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
@@ -94,7 +94,7 @@ export const journalData = [
     {
         id: 5,
         title: "Phân biệt xe đạp thành phố, xe địa hình và xe đường trường",
-        category: "Gear",
+        category: "Trang bị",
         date: "20.05.2025",
         readTime: "6 phút đọc",
         image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=80",
@@ -108,7 +108,7 @@ export const journalData = [
     {
         id: 6,
         title: "Lợi ích của thói quen đạp xe 30 phút mỗi ngày đối với sức khỏe",
-        category: "Lifestyle",
+        category: "Phong cách sống",
         date: "14.05.2025",
         readTime: "4 phút đọc",
         image: "https://images.unsplash.com/photo-1529422643029-d4585747aaf2?auto=format&fit=crop&w=800&q=80",
