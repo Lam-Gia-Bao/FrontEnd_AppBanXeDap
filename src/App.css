@@ -1920,3 +1920,95 @@ header {
     padding: 24px 18px;
   }
 }
+
+/* Consistent rounded corners across page surfaces */
+.button,
+.feedback-button,
+.cart-checkout-button,
+.checkout-submit,
+.auth-submit,
+.google-button,
+.shop-category-btn,
+.wishlist-clear-btn,
+.shop-search,
+.shop-sort select,
+.pagination button,
+.shop-pagination button,
+.size-guide-form input,
+.auth-form input,
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.cart-quantity,
+.checkout-quantity,
+.quantity-control,
+.checkout-fields input,
+.checkout-fields select,
+.checkout-fields textarea,
+.checkout-note,
+.detail-heart,
+.product-thumbnails button,
+.specification-grid,
+.journal-detail-actions input,
+.article-detail,
+.cart-toast,
+.header-search-results {
+  border-radius: 8px;
+}
+
+.category,
+.product-photo,
+.product-main-image,
+.journal-card,
+.journal-page-card,
+.journal-page-thumb,
+.article-banner,
+.story-photo img,
+.auth-card,
+.support-content article,
+.delivery-steps,
+.policy-card,
+.warranty-process,
+.faq-item,
+.faq-contact,
+.support-action,
+.contact-info,
+.contact-form-card,
+.size-guide-box,
+.journal-page-card,
+.cart-items,
+.cart-summary,
+.cart-empty,
+.cart-item-image,
+.cart-toast-product img,
+.checkout-card,
+.checkout-summary,
+.success-hero,
+.success-order,
+.success-customer,
+.feedback-bar,
+.feedback-button,
+.social-links a,
+.badge,
+.shop-empty,
+.specification-grid {
+  border-radius: 10px;
+}
+
+.delivery-steps {
+  overflow: hidden;
+}
+
+.category,
+.product-photo,
+.product-main-image,
+.journal-page-thumb,
+.article-banner,
+.cart-item-image,
+.success-product-image img {
+  overflow: hidden;
+}
+
+.banner-slider {
+  border-radius: 12px;
+}
