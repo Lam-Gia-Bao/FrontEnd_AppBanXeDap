@@ -17,7 +17,22 @@ function ProductDetail() {
     const [activeTab, setActiveTab] = useState("description");
 
     const addToCart = () => {
-        alert(`Đã thêm ${quantity} sản phẩm vào giỏ hàng`);
+        const savedCart = JSON.parse(localStorage.getItem("bikeTrendCart") || "[]");
+        const existingItem = savedCart.find((item) => item.id === product.id);
+        const updatedCart = existingItem
+            ? savedCart.map((item) => item.id === product.id
+                ? { ...item, quantity: item.quantity + quantity }
+                : item)
+            : [...savedCart, { id: product.id, quantity }];
+        localStorage.setItem("bikeTrendCart", JSON.stringify(updatedCart));
+        window.dispatchEvent(new Event("bikeTrendCartChanged"));
+        window.dispatchEvent(new CustomEvent("bikeTrendCartAdded", {
+            detail: {
+                name: product.name,
+                image: product.image,
+                quantity,
+            },
+        }));
     };
 
     const buyNow = () => {
