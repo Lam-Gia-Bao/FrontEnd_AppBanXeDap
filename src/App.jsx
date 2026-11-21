@@ -15,6 +15,7 @@ import ShippingPolicy from "./pages/ShippingPolicy.jsx";
 import WarrantyPolicy from "./pages/WarrantyPolicy.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
+import FeedbackBar from "./components/FeedbackBar.jsx";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/contact" element={<Contact />} />
               </Routes>
+            <FeedbackBar />
             <Footer />
           </div>
       </BrowserRouter>
