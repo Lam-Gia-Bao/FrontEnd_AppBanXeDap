@@ -24,6 +24,8 @@ function Shop() {
         const categoryFromUrl = searchParams.get("category");
         if (categoryFromUrl) {
             setSelectedCategory(categoryFromUrl);
+        } else {
+            setSelectedCategory("Tất cả");
         }
     }, [searchParams]);
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { categoriesData, productsData } from "../data/bikesData";
+import { categoriesData, productsData, countProducts, journalData} from "../data/bikesData";
 import { Link } from "react-router-dom";
 import banner1 from "../assets/banners/banner-1.png";
 import banner2 from "../assets/banners/banner-2.png";
@@ -21,6 +21,7 @@ function Home() {
     const [activeBanner, setActiveBanner] = useState(0);
     const homeCategories = categoriesData.filter(cat => cat.name !== "Tất cả").slice(0, 4);
     const featuredProducts = productsData.slice(0, 6);
+    const homeArticles = journalData.slice(0, 3);
 
     const [wishlistIds, setWishlistIds] = useState(() => {
         const saved = localStorage.getItem("wishlistBikes");
@@ -117,8 +118,8 @@ function Home() {
                             <Link key={cat.id} className="category" to={`/shop?category=${encodeURIComponent(cat.name)}`}>
                                 <img src={cat.image} alt={cat.name} />
                                 <div>
-                                    <h3>{cat.name}</h3>
-                                    <small>{cat.count}</small>
+                                    <h3>{cat.name} ({countProducts(cat.name)})</h3>
+                                    <small>{countProducts(cat.name)} sản phẩm</small>
                                 </div>
                             </Link>
                         ))}
@@ -190,30 +191,19 @@ function Home() {
                         <Link className="text-link" to="/journal">Xem tất cả bài viết</Link>
                     </div>
                     <div className="journal-grid">
-                        <article className="journal-card">
-                            <img src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?auto=format&fit=crop&w=900&q=80" alt="Đạp xe cuối tuần" />
-                            <div>
-                                <small>Phong cách sống · 12.06.2025</small>
-                                <h3>5 cung đường tuyệt đẹp cho chuyến đạp xe cuối tuần</h3>
-                                <p>Gợi ý những cung đường để bạn nạp lại năng lượng và tận hưởng thiên nhiên.</p>
-                            </div>
-                        </article>
-                        <article className="journal-card">
-                            <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=700&q=80" alt="Bảo dưỡng xe" />
-                            <div>
-                                <small>Mẹo hay · 08.06.2025</small>
-                                <h3>Chăm xe đúng cách cho hành trình dài</h3>
-                                <Link className="text-link" to="/journal/2">Đọc thêm</Link>
-                            </div>
-                        </article>
-                        <article className="journal-card">
-                            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=700&q=80" alt="Phụ kiện đạp xe" />
-                            <div>
-                                <small>Trang bị · 02.06.2025</small>
-                                <h3>Những món phụ kiện không thể thiếu</h3>
-                                <Link className="text-link" to="/journal/3">Đọc thêm</Link>
-                            </div>
-                        </article>
+                        {homeArticles.map(article => (
+                            <article key={article.id} className="journal-card">
+                                <Link to={`/journal/${article.id}`}>
+                                    <img src={article.image} alt={article.title} />
+                                </Link>
+                                <div>
+                                    <small>{article.category} · {article.date}</small>
+                                    <h3>{article.title}</h3>
+                                    <p>{article.excerpt}</p>
+                                    <Link className="text-link" to={`/journal/${article.id}`}>Đọc thêm</Link>
+                                </div>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>
