@@ -11,6 +11,10 @@ import OrderSuccess from "./pages/OrderSuccess.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import Journal from "./pages/Journal.jsx";
 import JournalDetail from "./pages/JournalDetail.jsx";
+import ShippingPolicy from "./pages/ShippingPolicy.jsx";
+import WarrantyPolicy from "./pages/WarrantyPolicy.jsx";
+import FAQ from "./pages/FAQ.jsx";
+import Contact from "./pages/Contact.jsx";
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
                   <Route path="/wishlist" element={<Wishlist />} />
                   <Route path="/journal" element={<Journal />} />
                   <Route path="/journal/:id" element={<JournalDetail />} />
+                  <Route path="/shipping-policy" element={<ShippingPolicy />} />
+                  <Route path="/returns-warranty" element={<WarrantyPolicy />} />
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/contact" element={<Contact />} />
               </Routes>
             <Footer />
           </div>

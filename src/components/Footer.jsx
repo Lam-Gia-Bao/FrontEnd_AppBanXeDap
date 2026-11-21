@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
     return (
         <footer id="footer">
@@ -23,10 +25,10 @@ function Footer() {
                     <div>
                         <h4>Hỗ trợ</h4>
                         <ul>
-                            <li>Chính sách giao hàng</li>
-                            <li>Đổi trả & bảo hành</li>
-                            <li>Câu hỏi thường gặp</li>
-                            <li>Liên hệ</li>
+                            <li><Link to="/shipping-policy">Chính sách giao hàng</Link></li>
+                            <li><Link to="/returns-warranty">Đổi trả & bảo hành</Link></li>
+                            <li><Link to="/faq">Câu hỏi thường gặp</Link></li>
+                            <li><Link to="/contact">Liên hệ</Link></li>
                         </ul>
                     </div>
 
