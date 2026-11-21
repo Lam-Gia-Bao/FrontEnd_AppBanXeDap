@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { journalData } from "../data/bikesData";
 
-const topics = ["Tất cả", "Lifestyle", "Tips", "Gear"];
+const topics = ["Tất cả", "Phong cách sống", "Mẹo hay", "Trang bị"];
 
 function Journal() {
     const [selectedTopic, setSelectedTopic] = useState("Tất cả");
@@ -21,11 +21,11 @@ function Journal() {
             return;
         }
         if (h < 160) {
-            setSizeResult("Chiều cao " + h + "cm: Phù hợp khung Size S (15 - 16 inch), bánh 26 inch hoặc 700C.");
+            setSizeResult("Chiều cao " + h + "cm: Phù hợp khung cỡ S (15 - 16 inch), bánh 26 inch hoặc 700C.");
         } else if (h <= 175) {
-            setSizeResult("Chiều cao " + h + "cm: Phù hợp khung Size M (17 - 18 inch), bánh 27.5 inch hoặc 700C.");
+            setSizeResult("Chiều cao " + h + "cm: Phù hợp khung cỡ M (17 - 18 inch), bánh 27.5 inch hoặc 700C.");
         } else {
-            setSizeResult("Chiều cao " + h + "cm: Phù hợp khung Size L (19 - 20 inch), bánh 29 inch hoặc 700C.");
+            setSizeResult("Chiều cao " + h + "cm: Phù hợp khung cỡ L (19 - 20 inch), bánh 29 inch hoặc 700C.");
         }
     };
 
@@ -33,7 +33,7 @@ function Journal() {
         <main className="container shop-page">
             <div className="section-head">
                 <div>
-                    <div className="eyebrow">BikeTrend Journal</div>
+                    <div className="eyebrow">Cẩm nang BikeTrend</div>
                     <h2>Cẩm nang & Cảm hứng đạp xe</h2>
                 </div>
                 <p>Chia sẻ kinh nghiệm chọn xe, bảo dưỡng và những hành trình thú vị</p>
@@ -76,7 +76,7 @@ function Journal() {
                 <div>
                     <div className="eyebrow">Công cụ hỗ trợ</div>
                     <h3>Tra cứu nhanh kích thước khung xe theo chiều cao</h3>
-                    <p>Nhập chiều cao của bạn (cm) để nhận gợi ý size khung xe vừa vặn nhất.</p>
+                    <p>Nhập chiều cao của bạn (cm) để nhận gợi ý cỡ khung xe vừa vặn nhất.</p>
                 </div>
                 <form className="size-guide-form" onSubmit={handleCheckSize}>
                     <input
@@ -85,7 +85,7 @@ function Journal() {
                         value={heightInput}
                         onChange={(e) => setHeightInput(e.target.value)}
                     />
-                    <button type="submit" className="button">Kiểm tra size</button>
+                    <button type="submit" className="button">Kiểm tra cỡ khung</button>
                 </form>
                 {sizeResult && <div className="size-guide-result">{sizeResult}</div>}
             </section>

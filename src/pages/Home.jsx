@@ -184,16 +184,16 @@ function Home() {
                 <div className="container">
                     <div className="section-head">
                         <div>
-                            <div className="eyebrow">BikeTrend Journal</div>
+                            <div className="eyebrow">Cẩm nang BikeTrend</div>
                             <h2>Cảm hứng mỗi ngày</h2>
                         </div>
-                        Đổi thành: <Link className="text-link" to="/journal">Xem tất cả bài viết</Link>
+                        <Link className="text-link" to="/journal">Xem tất cả bài viết</Link>
                     </div>
                     <div className="journal-grid">
                         <article className="journal-card">
                             <img src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?auto=format&fit=crop&w=900&q=80" alt="Đạp xe cuối tuần" />
                             <div>
-                                <small>Lifestyle · 12.06.2025</small>
+                                <small>Phong cách sống · 12.06.2025</small>
                                 <h3>5 cung đường tuyệt đẹp cho chuyến đạp xe cuối tuần</h3>
                                 <p>Gợi ý những cung đường để bạn nạp lại năng lượng và tận hưởng thiên nhiên.</p>
                             </div>
@@ -201,7 +201,7 @@ function Home() {
                         <article className="journal-card">
                             <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=700&q=80" alt="Bảo dưỡng xe" />
                             <div>
-                                <small>Tips · 08.06.2025</small>
+                                <small>Mẹo hay · 08.06.2025</small>
                                 <h3>Chăm xe đúng cách cho hành trình dài</h3>
                                 <Link className="text-link" to="/journal/2">Đọc thêm</Link>
                             </div>
@@ -209,7 +209,7 @@ function Home() {
                         <article className="journal-card">
                             <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=700&q=80" alt="Phụ kiện đạp xe" />
                             <div>
-                                <small>Gear · 02.06.2025</small>
+                                <small>Trang bị · 02.06.2025</small>
                                 <h3>Những món phụ kiện không thể thiếu</h3>
                                 <Link className="text-link" to="/journal/3">Đọc thêm</Link>
                             </div>
