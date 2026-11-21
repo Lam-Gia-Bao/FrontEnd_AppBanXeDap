@@ -16,6 +16,8 @@ import WarrantyPolicy from "./pages/WarrantyPolicy.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
 import FeedbackBar from "./components/FeedbackBar.jsx";
+import Cart from "./pages/Cart.jsx";
+import CartToast from "./components/CartToast.jsx";
 
 function App() {
   return (
@@ -37,9 +39,11 @@ function App() {
                   <Route path="/returns-warranty" element={<WarrantyPolicy />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/cart" element={<Cart />} />
               </Routes>
             <FeedbackBar />
             <Footer />
+            <CartToast />
           </div>
       </BrowserRouter>
   )

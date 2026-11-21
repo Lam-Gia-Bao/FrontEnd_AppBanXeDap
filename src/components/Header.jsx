@@ -6,6 +6,10 @@ function Header() {
     const [openMenu, setOpenMenu] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
+    const [cartCount, setCartCount] = useState(() => {
+        const savedCart = JSON.parse(localStorage.getItem("bikeTrendCart") || "[]");
+        return savedCart.reduce((total, item) => total + item.quantity, 0);
+    });
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const searchInputRef = useRef(null);
@@ -31,6 +35,19 @@ function Header() {
             searchInputRef.current?.focus();
         }
     }, [openSearch]);
+
+    useEffect(() => {
+        const syncCartCount = () => {
+            const savedCart = JSON.parse(localStorage.getItem("bikeTrendCart") || "[]");
+            setCartCount(savedCart.reduce((total, item) => total + item.quantity, 0));
+        };
+        window.addEventListener("bikeTrendCartChanged", syncCartCount);
+        window.addEventListener("storage", syncCartCount);
+        return () => {
+            window.removeEventListener("bikeTrendCartChanged", syncCartCount);
+            window.removeEventListener("storage", syncCartCount);
+        };
+    }, []);
 
     const handleHomeClick = () => {
         setOpenMenu(false);
@@ -95,18 +112,18 @@ function Header() {
                                 <path d="M15 15l4.2 4.2" />
                             </svg>
                         </button>
-                        <button
+                        <Link
                             className="bag"
                             aria-label="Giỏ hàng"
-                            onClick={() => handleActionClick("giỏ hàng")}
+                            to="/cart"
                         >
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M3.5 5h2l1.8 9.2h9.9l2-6.2H7" />
                                 <circle cx="9" cy="18.5" r="1" />
                                 <circle cx="16.5" cy="18.5" r="1" />
                             </svg>
-                            <span className="bag-count">0</span>
-                        </button>
+                            <span className="bag-count">{cartCount}</span>
+                        </Link>
                         <Link className="avatar-link" to="/login" aria-label="Đăng nhập">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <circle cx="12" cy="8" r="3.5" />
