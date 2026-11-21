@@ -5,8 +5,9 @@ import { Link, useSearchParams } from "react-router-dom";
 function Shop() {
     const [searchParams, setSearchParams] = useSearchParams();
     const initialCategory = searchParams.get("category") || "Tất cả";
+    const initialSearch = searchParams.get("q") || "";
 
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState(initialSearch);
     const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [sortBy, setSortBy] = useState("default");
 
@@ -27,6 +28,7 @@ function Shop() {
         } else {
             setSelectedCategory("Tất cả");
         }
+        setSearchTerm(searchParams.get("q") || "");
     }, [searchParams]);
 
     const handleCategorySelect = (categoryName) => {
