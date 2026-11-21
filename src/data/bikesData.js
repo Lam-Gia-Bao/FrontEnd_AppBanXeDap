@@ -150,3 +150,16 @@ export const journalData = [
         ]
     }
 ];
+
+export function countProducts(categoryName) {
+    if (categoryName === "Tất cả") {
+        return productsData.length;
+    }
+    let count = 0;
+    for (let i = 0; i < productsData.length; i++) {
+        if (productsData[i].category === categoryName) {
+            count++;
+        }
+    }
+    return count;
+}

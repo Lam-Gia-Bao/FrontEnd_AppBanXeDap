@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { categoriesData, productsData } from "../data/bikesData";
+import { categoriesData, productsData, countProducts } from "../data/bikesData";
 import { Link } from "react-router-dom";
 import banner1 from "../assets/banners/banner-1.png";
 import banner2 from "../assets/banners/banner-2.png";
@@ -117,8 +117,8 @@ function Home() {
                             <Link key={cat.id} className="category" to={`/shop?category=${encodeURIComponent(cat.name)}`}>
                                 <img src={cat.image} alt={cat.name} />
                                 <div>
-                                    <h3>{cat.name}</h3>
-                                    <small>{cat.count}</small>
+                                    <h3>{cat.name} ({countProducts(cat.name)})</h3>
+                                    <small>{countProducts(cat.name)} sản phẩm</small>
                                 </div>
                             </Link>
                         ))}
