@@ -1,13 +1,36 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { productsData } from "../data/bikesData";
 
 function Header() {
     const [openMenu, setOpenMenu] = useState(false);
+    const [openSearch, setOpenSearch] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
     const { pathname } = useLocation();
+    const navigate = useNavigate();
+    const searchInputRef = useRef(null);
+    const searchResults = searchTerm.trim()
+        ? productsData.filter((product) => {
+            const keyword = searchTerm.trim().toLowerCase();
+            return [
+                product.name,
+                product.category,
+                product.desc,
+            ].some((text) => text.toLowerCase().includes(keyword));
+        }).slice(0, 6)
+        : [];
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setOpenSearch(false);
+        setOpenMenu(false);
     }, [pathname]);
+
+    useEffect(() => {
+        if (openSearch) {
+            searchInputRef.current?.focus();
+        }
+    }, [openSearch]);
 
     const handleHomeClick = () => {
         setOpenMenu(false);
@@ -16,6 +39,19 @@ function Header() {
 
     const handleActionClick = (tenChucNang) => {
         alert("Tính năng " + tenChucNang + " đang được cập nhật");
+    };
+
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        const keyword = searchTerm.trim();
+        setOpenSearch(false);
+        navigate(keyword ? `/shop?q=${encodeURIComponent(keyword)}` : "/shop");
+    };
+
+    const handleSearchKeyDown = (event) => {
+        if (event.key === "Escape") {
+            setOpenSearch(false);
+        }
     };
 
     return (
@@ -32,7 +68,7 @@ function Header() {
                 </div>
             </div>
 
-            <header>
+            <header className={openSearch ? "header-search-open" : ""}>
                 <div className="container nav">
                     <Link className="logo" to="/" onClick={handleHomeClick}>
                         <span className="logo-mark">⚙</span>BikeTrend
@@ -52,7 +88,7 @@ function Header() {
                         <button
                             className="search"
                             aria-label="Tìm kiếm"
-                            onClick={() => handleActionClick("tìm kiếm")}
+                            onClick={() => setOpenSearch(true)}
                         >
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <circle cx="10.8" cy="10.8" r="5.8" />
@@ -84,6 +120,68 @@ function Header() {
                             onClick={() => setOpenMenu(!openMenu)}
                         >
                             ☰
+                        </button>
+                    </div>
+                </div>
+                <div className={`header-search-panel ${openSearch ? "open" : ""}`}>
+                    <div className="container header-search-inner" onKeyDown={handleSearchKeyDown}>
+                        <Link className="logo" to="/" onClick={handleHomeClick}>
+                            <span className="logo-mark">⚙</span>BikeTrend
+                        </Link>
+                        <form className="header-search-form" onSubmit={handleSearchSubmit}>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="10.8" cy="10.8" r="5.8" />
+                                <path d="M15 15l4.2 4.2" />
+                            </svg>
+                            <input
+                                ref={searchInputRef}
+                                type="search"
+                                value={searchTerm}
+                                onChange={(event) => setSearchTerm(event.target.value)}
+                                placeholder="Tìm kiếm xe đạp, phụ kiện..."
+                                aria-label="Từ khóa tìm kiếm"
+                            />
+                        </form>
+                        {searchTerm.trim() && (
+                            <div className="header-search-results" role="listbox">
+                                <div className="header-search-results-title">Sản phẩm</div>
+                                {searchResults.length > 0 ? (
+                                    searchResults.map((product) => (
+                                        <Link
+                                            className="header-search-result"
+                                            to={`/product/${product.id}`}
+                                            key={product.id}
+                                            onClick={() => setOpenSearch(false)}
+                                        >
+                                            <img src={product.image} alt={product.name} />
+                                            <span>
+                                                <strong>{product.name}</strong>
+                                                <small>{product.category} · {product.priceFormatted}</small>
+                                            </span>
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <p className="header-search-empty">
+                                        Không tìm thấy sản phẩm phù hợp
+                                    </p>
+                                )}
+                                <Link
+                                    className="header-search-all"
+                                    to={`/shop?q=${encodeURIComponent(searchTerm.trim())}`}
+                                    onClick={() => setOpenSearch(false)}
+                                >
+                                    Xem tất cả kết quả <span>→</span>
+                                </Link>
+                            </div>
+                        )}
+                        <button
+                            type="button"
+                            className="header-search-close"
+                            aria-label="Đóng tìm kiếm"
+                            onClick={() => setOpenSearch(false)}
+                        >
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>
